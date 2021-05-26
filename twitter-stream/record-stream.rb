@@ -17,6 +17,7 @@ class StreamRunner
       skip unless object.is_a? Twitter::Tweet
 
       json_tweet = object.to_h.to_json
+      # TODO: add _received_at to calculate the age of a tweet
       file << "#{json_tweet}\n"
     end
   rescue Twitter::Error => err
